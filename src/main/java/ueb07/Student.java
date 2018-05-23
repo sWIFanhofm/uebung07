@@ -1,6 +1,7 @@
 package ueb07;
 
-class Student {
+
+class Student implements Comparable<Student> {
 	private int matrikel;
 	private String name;
 
@@ -44,5 +45,10 @@ class Student {
 	@Override
 	public String toString() {
 		return name + " (" + matrikel + ") [" + this.hashCode() + "]";
+	}
+
+	@Override
+	public int compareTo(Student o) {
+		return Integer.compare(matrikel, o.getMatrikel());
 	}
 }
